@@ -18,10 +18,12 @@ import unittest
 class TestStringMethods(unittest.TestCase):
 
     def test_MarkdownToHTML(self):
-        self.assertEqual(ChatbotCoversationAdapter.convert_MarkDown_to_HTML(open("index.html", "r").read()), open("index.html", "r").read())
+        self.assertEqual(ChatbotCoversationAdapter.convert_MarkDown_to_HTML(open("hyperlink.html", "r").read()), open("hyperlink.md", "r").read())
+        self.assertEqual(ChatbotCoversationAdapter.convert_MarkDown_to_HTML(open("images.html", "r").read()), open("images.md", "r").read())
+        self.assertEqual(ChatbotCoversationAdapter.convert_MarkDown_to_HTML(open("list.html", "r").read()), open("list.md", "r").read())
+        self.assertEqual(ChatbotCoversationAdapter.convert_MarkDown_to_HTML(open("list_multi.html", "r").read()), open("list_multi.md", "r").read())
+        self.assertEqual(ChatbotCoversationAdapter.convert_MarkDown_to_HTML(open("Text.html", "r").read()), open("Text.md", "r").read())
 
-    def test_HTMLtoMarkdown(self):
-         self.assertEqual(ChatbotCoversationAdapter.convert_HTML_to_MarkDown(""), 'FOO')
 
 if __name__ == '__main__':
     unittest.main()
